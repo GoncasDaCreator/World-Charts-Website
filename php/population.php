@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 $continent = $_GET['continent'];
 
 // Query to fetch data
-$query = "SELECT Name, Population FROM Country WHERE WHERE Continent = ? ORDER BY Population DESC LIMIT 20";
+$query = "SELECT Name, Population FROM Country WHERE Continent = ? ORDER BY Population DESC LIMIT 20";
 $select = $conn->prepare($query);
 $select->bind_param("s",$continent);
 $select->execute();
